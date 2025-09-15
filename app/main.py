@@ -18,6 +18,7 @@ app.add_middleware(
         "http://127.0.0.1:3000",
         "https://zw8p15j6-4321.brs.devtunnels.ms"
     ],
+     allow_origin_regex=r"https://.*\.brs\.devtunnels\.ms",
     allow_credentials=True,
     allow_methods=["GET", "POST"],
     allow_headers=["*"],
