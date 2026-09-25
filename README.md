@@ -1,10 +1,12 @@
-# Detection IA
+# Prototipo de Detección con IA
 
-Computer vision API and web interface for object detection using **FastAPI**, **YOLOv8** and **OpenCV**.
+> **Tipo de proyecto:** Prototipo técnico / proyecto de aprendizaje
 
-The project is container-ready and includes configuration for deployment workflows.
+Prototipo desarrollado para experimentar con detección de objetos usando **FastAPI**, **YOLOv8** y **OpenCV**.
 
-## Tech Stack
+El objetivo principal fue practicar integración de visión por computadora con una API web, contenerización y despliegue cloud.
+
+## Tecnologías
 
 - Python
 - FastAPI
@@ -15,17 +17,18 @@ The project is container-ready and includes configuration for deployment workflo
 - Docker
 - Google Cloud Build / Cloud Run
 
-## Features
+## Funcionalidades
 
-- Object detection through a FastAPI backend
-- YOLO-based inference
-- Image processing with OpenCV
-- Web interface rendered with Jinja2 templates
-- Static asset support
-- CORS configuration for frontend integration
-- Dockerized deployment
+- Detección de objetos
+- Inferencia con YOLO
+- Procesamiento de imágenes con OpenCV
+- API mediante FastAPI
+- Interfaz web con Jinja2
+- Recursos estáticos
+- Configuración CORS
+- Dockerfile para contenerización
 
-## Project Structure
+## Estructura
 
 ```text
 app/
@@ -41,49 +44,39 @@ cloudbuild.yaml
 requirements.txt
 ```
 
-## Installation
-
-Create a virtual environment and install the dependencies:
+## Instalación
 
 ```bash
 python -m venv .venv
-```
-
-Activate it and run:
-
-```bash
 pip install -r requirements.txt
 ```
 
-## Run Locally
+## Ejecución local
 
 ```bash
 uvicorn app.main:app --reload
 ```
 
-Then open:
+Luego puede abrirse:
 
 ```text
 http://localhost:8000
 ```
 
-FastAPI interactive documentation is normally available at:
+La documentación interactiva de FastAPI está disponible normalmente en:
 
 ```text
 http://localhost:8000/docs
 ```
 
-## Deployment
+## Muestra
 
-The repository includes:
+![Ejemplo de detección](./animales.jpeg)
 
-- `Dockerfile` for container builds
-- `cloudbuild.yaml` for Google Cloud build/deployment workflows
+## Nota
 
-## Example Asset
-
-![Detection sample](./animales.jpeg)
+Este repositorio es un prototipo técnico y no representa un sistema utilizado en producción.
 
 ---
 
-**Author:** Miguel Martínez
+**Autor:** Miguel Martínez
