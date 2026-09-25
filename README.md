@@ -4,7 +4,7 @@
 
 Prototipo desarrollado para experimentar con detección de objetos usando **FastAPI**, **YOLOv8** y **OpenCV**.
 
-El objetivo principal fue practicar integración de visión por computadora con una API web, contenerización y despliegue cloud.
+Este repositorio unifica las pruebas que anteriormente estaban separadas para **Google Cloud Run** y **Fly.io**.
 
 ## Tecnologías
 
@@ -15,18 +15,18 @@ El objetivo principal fue practicar integración de visión por computadora con 
 - NumPy
 - Jinja2
 - Docker
-- Google Cloud Build / Cloud Run
+- Google Cloud Run
+- Fly.io
 
 ## Funcionalidades
 
-- Detección de objetos
-- Inferencia con YOLO
+- Detección de objetos mediante YOLO
 - Procesamiento de imágenes con OpenCV
-- API mediante FastAPI
+- API REST con FastAPI
 - Interfaz web con Jinja2
-- Recursos estáticos
-- Configuración CORS
-- Dockerfile para contenerización
+- Configuración CORS mediante variables de entorno
+- Contenerización con Docker
+- Configuración de despliegue para Cloud Run y Fly.io
 
 ## Estructura
 
@@ -41,6 +41,7 @@ static/
 templates/
 Dockerfile
 cloudbuild.yaml
+fly.toml
 requirements.txt
 ```
 
@@ -57,17 +58,35 @@ pip install -r requirements.txt
 uvicorn app.main:app --reload
 ```
 
-Luego puede abrirse:
+La aplicación estará disponible normalmente en:
 
 ```text
 http://localhost:8000
 ```
 
-La documentación interactiva de FastAPI está disponible normalmente en:
+La documentación interactiva de FastAPI puede consultarse en:
 
 ```text
 http://localhost:8000/docs
 ```
+
+## Configuración CORS
+
+Los orígenes adicionales pueden definirse mediante la variable:
+
+```text
+FRONTEND_ORIGINS=https://frontend1.com,https://frontend2.com
+```
+
+## Despliegue
+
+### Google Cloud Run
+
+El repositorio incluye `cloudbuild.yaml` para el flujo de construcción y despliegue.
+
+### Fly.io
+
+El repositorio incluye `fly.toml` y utiliza la variable `PORT` proporcionada por la plataforma.
 
 ## Muestra
 
@@ -75,7 +94,7 @@ http://localhost:8000/docs
 
 ## Nota
 
-Este repositorio es un prototipo técnico y no representa un sistema utilizado en producción.
+Este proyecto es un prototipo técnico y no representa un sistema utilizado en producción.
 
 ---
 
